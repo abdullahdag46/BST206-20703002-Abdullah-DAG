@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="480" Width="600" Background="#FFB10D0D" Loaded="Window_Loaded">
+    <Grid Name="grdi" Margin="0,0,-19,0" HorizontalAlignment="Right" Width="609" Height="470" VerticalAlignment="Top" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="42*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="587" Grid.ColumnSpan="2" Grid.RowSpan="2" >
+            <GroupBox Height="100" Header="Ürün Adına Göre Filitrelme" >
+                <DockPanel VerticalAlignment="Center"  LastChildFill="False">
+                    <Label>Ürün Adı</Label>
+                    <TextBox Name="txtara" Height="30" TextWrapping="Wrap" Width="396"/>
+                </DockPanel>
+            </GroupBox>
+            <DataGrid Name="dtgproduct" Margin="10,0,10,10" SelectionMode="Single" AutoGenerateColumns="False" AlternatingRowBackground="DarkBlue" Height="140" AlternationCount="0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding ıd}" Header="Sıra No" IsReadOnly="True" Width="SizeToHeader" />
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Ürün Adı" IsReadOnly="True" Width="120" />
+                    <DataGridTextColumn Binding="{Binding Fiyat}" Header="Birim Fiyatı" IsReadOnly="True" Width="120" />
+                    <DataGridTextColumn Binding="{Binding Stok}" Header="Stok Miktarı" IsReadOnly="True" Width="120" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <TextBlock TextWrapping="Wrap" Text="ıd" Margin="63,218,508,168" RenderTransformOrigin="0.517,0.498" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBlock TextWrapping="Wrap" Text="Ürün Adı" Margin="34,271,527,118" RenderTransformOrigin="2.052,3.269" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBlock TextWrapping="Wrap" Text="Birim Fiyatı" Margin="271,218,240,168" RenderTransformOrigin="0.517,0.498" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBlock TextWrapping="Wrap" Text="Stok Mitarı" Margin="271,271,259,117" RenderTransformOrigin="0.517,0.498" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBox Name="txtıd"IsEnabled="False" TextWrapping="Wrap" Text="{Binding ıd}" Margin="112,215,387,168" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBox Name="txtproductName" TextWrapping="Wrap" Text="{Binding Name}" Margin="376,214,123,171" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBox Name="txtfiyat" TextWrapping="Wrap" Text="{Binding Fiyat}" Margin="376,268,123,117" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBox Name="txtstok" TextWrapping="Wrap" Text="{Binding Stok}" Margin="126,268,373,118" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Button Name="btnekle" Content="Ekle" HorizontalAlignment="Left" Margin="57,343,0,0" VerticalAlignment="Top" Height="41" Width="71" Grid.ColumnSpan="2" Grid.Row="1" Click="btnekle_Click"/>
+        <Button Name="btntemizle" Content="Temizle" Margin="165,343,0,0" VerticalAlignment="Top" Height="41" HorizontalAlignment="Left" Width="71" RenderTransformOrigin="0.561,0.021" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Button Name="btngüncelle" Content="Güncelle" HorizontalAlignment="Center" Margin="0,343,0,0" VerticalAlignment="Top" Height="41" Width="72" Grid.Column="1" Grid.Row="1"/>
+        <Button Name="btnsil" Content="Sil" HorizontalAlignment="Left" Margin="366,343,0,0" VerticalAlignment="Top" Height="41" Width="71" RenderTransformOrigin="0.237,-0.136" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+
+
+    </Grid>
+</Window>
